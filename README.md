@@ -1,3 +1,3 @@
 # MailClient
 
-The MailClient look like the amazing outlook.
+The MailClient used amazing JavaFx Library.
