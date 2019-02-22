@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1096.0" styleClass="appBgWhiteColor" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="rootVBox" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" text="%Security" />
+                  <HBox fx:id="secLevelHBox" spacing="10.0" />
+                  <Label alignment="CENTER" text="%Important">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Label>
+                  <CheckBox fx:id="importantCheckBox" mnemonicParsing="false" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Button fx:id="toLeftButton" onAction="#actionOnToButton" prefWidth="100.0" styleClass="attach-menu-button" text="%ToStrim">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin></Button>
+                  <HBox fx:id="toHBox" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="toTextField" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="toButton" onAction="#actionOnToButton" styleClass="toolBarbutton" text="%ToStrim">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Button fx:id="ccLeftButton" onAction="#actionOnCcButton" prefWidth="100.0" styleClass="attach-menu-button" text="%CcStrim">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin></Button>
+                  <HBox fx:id="ccHBox" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="ccTextField" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="ccButton" onAction="#actionOnCcButton" styleClass="toolBarbutton" text="%CcStrim">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Button fx:id="bccLeftButton" onAction="#actionOnBccButton" prefWidth="100.0" styleClass="attach-menu-button" text="%BccStrim">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <HBox fx:id="bccHBox" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="bccTextField" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="bccButton" onAction="#actionOnBccButton" styleClass="toolBarbutton" text="%BccStrim">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT">
+               <children>
+                  <Label fx:id="subjectLabel" alignment="CENTER" prefWidth="100.0" text="%SubjectColon1">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <HBox fx:id="subjectHBox" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="subjectTextField" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="gapButton" onAction="#actionOnBccButton" styleClass="toolBarbutton" text="%BccStrim" visible="false" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Pane prefHeight="1.0" styleClass="appBgGreyColor" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="1.0" />
+               </padding>
+            </Pane>
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="attachButton" mnemonicParsing="false" onAction="#actionOnAttachButton" prefWidth="100.0" styleClass="attach-menu-button" text="%AttachColon">
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <VBox fx:id="attachVBox" spacing="5.0" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Pane layoutX="10.0" layoutY="177.0" prefHeight="1.0" styleClass="appBgGreyColor" VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets top="1.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" />
+               </VBox.margin>
+            </Pane>
+            <HTMLEditor fx:id="ComposeArea" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="505.0" prefWidth="1090.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></HTMLEditor>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <CheckBox fx:id="retNoteCheckBox" mnemonicParsing="false" text="%ReturnReceipt" />
+                  <Label fx:id="errorLabel">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#actionOnSaveDraftButton" prefHeight="25.0" prefWidth="93.0" text="%save_draft">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="1003.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionOnSendButton" prefHeight="25.0" prefWidth="93.0" text="%Send">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

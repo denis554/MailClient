@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="150.0" text="%approve_selection">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Label>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="190.0" styleClass="dark-gery-bg-color" text="%opt_approver">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin></Label>
+                        <HBox alignment="CENTER" prefHeight="30.0" spacing="5.0" styleClass="grey-border-color">
+                           <children>
+                              <Label text="%search_for" />
+                              <TextField fx:id="seachTextField" prefWidth="100.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <ListView fx:id="optApproversListView" prefHeight="200.0" prefWidth="190.0">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin></ListView>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="274.0" layoutY="10.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="190.0" styleClass="dark-gery-bg-color" text="%app_approver">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin></Label>
+                        <ListView fx:id="appApproversListView" prefHeight="230.0" prefWidth="190.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin></ListView>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefWidth="150.0" text="%approve_instructions">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Label>
+                  <TextArea fx:id="instructionTextArea" prefHeight="150.0" prefWidth="390.0">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin></TextArea>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Pane prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Pane>
+                  <Label fx:id="instructionEnterdWordStatLabel" prefWidth="390.0" text="%app_instructions_word" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleClickedOnOkButton" prefWidth="100.0" text="%OK" />
+                  <Button mnemonicParsing="false" onAction="#handleClickedOnCancelButton" prefWidth="100.0" text="%Cancel" />
+               </children></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

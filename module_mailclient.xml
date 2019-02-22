@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mailclient" default="compile.module.mailclient">
+  <dirname property="module.mailclient.basedir" file="${ant.file.module_mailclient}"/>
+  
+  <property name="module.jdk.home.mailclient" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.mailclient" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.mailclient" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.mailclient" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="mailclient.output.dir" value="${module.mailclient.basedir}/bin"/>
+  <property name="mailclient.testoutput.dir" value="${module.mailclient.basedir}/bin"/>
+  
+  <path id="mailclient.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mailclient.module.production.classpath">
+    <path refid="${module.jdk.classpath.mailclient}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="mailclient.runtime.production.module.classpath">
+    <pathelement location="${mailclient.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="mailclient.module.classpath">
+    <pathelement location="${mailclient.output.dir}"/>
+    <path refid="${module.jdk.classpath.mailclient}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="mailclient.runtime.module.classpath">
+    <pathelement location="${mailclient.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mailclient">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mailclient">
+    <patternset refid="excluded.from.module.mailclient"/>
+  </patternset>
+  
+  <path id="mailclient.module.sourcepath">
+    <dirset dir="${module.mailclient.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.mailclient" depends="compile.module.mailclient.production,compile.module.mailclient.tests" description="Compile module MailClient"/>
+  
+  <target name="compile.module.mailclient.production" depends="register.custom.compilers" description="Compile module MailClient; production classes">
+    <mkdir dir="${mailclient.output.dir}"/>
+    <javac2 destdir="${mailclient.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mailclient}/javac">
+      <compilerarg line="${compiler.args.mailclient}"/>
+      <bootclasspath refid="mailclient.module.bootclasspath"/>
+      <classpath refid="mailclient.module.production.classpath"/>
+      <src refid="mailclient.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mailclient"/>
+    </javac2>
+    
+    <copy todir="${mailclient.output.dir}">
+      <fileset dir="${module.mailclient.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <boxName boxName="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.mailclient.tests" depends="register.custom.compilers,compile.module.mailclient.production" description="compile module MailClient; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.mailclient" description="cleanup module">
+    <delete dir="${mailclient.output.dir}"/>
+    <delete dir="${mailclient.testoutput.dir}"/>
+  </target>
+</project>

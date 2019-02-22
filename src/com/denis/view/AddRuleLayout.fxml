@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="486.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="50.0" layoutY="49.0" prefWidth="50.0" text="%Senders" />
+      <ChoiceBox fx:id="SendersIncludeChoice" layoutX="108.0" layoutY="45.0" prefHeight="25.0" prefWidth="68.0" />
+      <TextField fx:id="SendersText" layoutX="200.0" layoutY="45.0" prefHeight="25.0" prefWidth="234.0" />
+      <TextField fx:id="TitlesText" layoutX="201.0" layoutY="84.0" prefHeight="25.0" prefWidth="234.0" />
+      <ChoiceBox fx:id="TitlesIncludeChoice" layoutX="109.0" layoutY="84.0" prefHeight="25.0" prefWidth="68.0" />
+      <Label layoutX="51.0" layoutY="88.0" prefWidth="50.0" text="%Titles" />
+      <Label layoutX="51.0" layoutY="127.0" prefWidth="50.0" text="%Receivers" />
+      <ChoiceBox fx:id="ReceiversIncludeChoice" layoutX="109.0" layoutY="123.0" prefHeight="25.0" prefWidth="68.0" />
+      <TextField fx:id="ReceiversText" layoutX="201.0" layoutY="123.0" prefHeight="25.0" prefWidth="234.0" />
+      <Label layoutX="50.0" layoutY="216.0" prefWidth="50.0" text="%Move_To" />
+      <ChoiceBox fx:id="MoveToChoice" layoutX="109.0" layoutY="212.0" prefWidth="150.0" />
+      <Button layoutX="382.0" layoutY="336.0" mnemonicParsing="false" onAction="#CancelBtnAction" prefWidth="53.0" text="%Cancel" />
+      <Button layoutX="317.0" layoutY="336.0" mnemonicParsing="false" onAction="#SaveBtnAction" prefWidth="53.0" text="%Save" />
+      <Text layoutX="50.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%condition_met" />
+   </children>
+</AnchorPane>

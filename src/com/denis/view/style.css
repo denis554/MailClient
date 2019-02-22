@@ -1,0 +1,298 @@
+AnchorPane{
+  -fx-padding: 0;
+  -fx-background-color: radial-gradient(center 70% 5%, radius 60%, #ffffff,#ffffff);
+  -fx-background-repeat: repeat, no-repeat;
+  -fx-background-position: left top, left 19px top 15px ;
+}
+*{
+  -fx-border-radius: 0 0 0 0;
+  -fx-background-radius: 0 0 0 0;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill:black;
+}
+
+.appBgWhiteColor {
+  -fx-background-color: radial-gradient(center 70% 5%, radius 60%, #ffffff, #ffffff);
+}
+
+.appBgGreyColor {
+  -fx-background-color: #dddddd;
+}
+
+.dark-gery-bg-color {
+  -fx-background-color: #999c9e;
+}
+
+.grey-border-color {
+  -fx-background-color: transparent;
+  -fx-border-color: #b8b8b8;
+  -fx-border-width: 1;
+}
+
+.mail_cat_color_red {
+  -fx-background-color: #FF715A;
+}
+
+.mail_cat_color_blue {
+  -fx-background-color: #7CC6FF;
+}
+
+.mail_cat_color_green {
+  -fx-background-color: #82FF8A;
+}
+
+.mail_cat_color_orange {
+  -fx-background-color: #FF9C4C;
+}
+
+.mail_cat_color_yellow {
+  -fx-background-color: #FFF08D;
+}
+
+.mail_cat_color_purple {
+  -fx-background-color: #BF9AFF;
+}
+
+.searchComboxBox {
+  -fx-border-color: #b8b8b8;
+  -fx-border-width: 1;
+}
+
+.searchComboxBox:hover {
+  -fx-border-color: #ffa81f;
+  -fx-background-color: #ffea6f;
+  -fx-border-radius: 0, 0;
+}
+
+.searchComboxBox:pressed {
+  -fx-background-color: #ffa81f;
+}
+
+.attach-menu-button {
+  -fx-background-color: transparent;
+  -fx-border-color: #b8b8b8;
+  -fx-border-width: 1;
+}
+
+.attach-menu-button:hover {
+  -fx-border-color: #ffa81f;
+  -fx-background-color: #ffea6f;
+  -fx-border-radius: 0, 0;
+}
+
+.attach-menu-button:pressed {
+  -fx-background-color: #ffa81f;
+}
+
+.attach-menu-button .label {
+  -fx-text-fill: black;
+}
+
+.start-button:hover {
+  -fx-border-color: #ffa81f;
+  -fx-background-color: #ffea6f;
+  -fx-border-radius: 0, 0;
+}
+
+.start-button:pressed {
+  -fx-background-color: #ffa81f;
+}
+
+/*
+attach file ComboBox
+*/
+
+/*.attach-file-button {*/
+  /*-fx-background-color: transparent;*/
+  /*-fx-border-color: #b8b8b8;*/
+  /*-fx-border-width: 1;*/
+/*}*/
+
+/*.attach-file-button:hover {*/
+  /*-fx-border-color: #ffa81f;*/
+  /*-fx-background-color: #ffea6f;*/
+  /*-fx-border-radius: 0, 0;*/
+/*}*/
+
+/*.attach-file-button:pressed {*/
+  /*-fx-background-color: #ffa81f;*/
+/*}*/
+
+/*.attach-file-button .list-cell {*/
+  /*-fx-text-fill: black;*/
+/*}*/
+
+.attach-menu-button1 {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-border-width: 1;
+}
+
+.attach-menu-button1 .label {
+  -fx-text-fill: black;
+}
+
+.split-menu-button .label {
+  -fx-background-color: transparent;
+}
+
+.split-menu-button .arrow-button {
+  -fx-background-color: transparent;
+}
+
+.clicked_pane {
+  -fx-border-color: transparent;
+  -fx-border-width: 1;
+  -fx-background-radius: 0;
+  -fx-background-color: transparent;
+}
+
+.clicked_pane:hover {
+  -fx-border-color: #ffa81f;
+  -fx-background-color: #ffea6f;
+  -fx-border-radius: 0, 0;
+}
+
+.clicked_pane:pressed {
+  -fx-background-color: #ffa81f;
+}
+
+.toolBarbutton{
+  -fx-border-color: transparent;
+  -fx-border-width: 1;
+  -fx-background-radius: 0;
+  -fx-background-color: transparent;
+  -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+  -fx-font-size: 1em; /* 12 */
+  -fx-text-fill: black;
+}
+
+.mail_security_class_1 {
+  -fx-text-fill: #7CC6FF;
+}
+
+.mail_security_class_2 {
+  -fx-text-fill: #FF715A;
+}
+
+.mail_security_class_3 {
+  -fx-text-fill: #82FF8A;
+}
+
+.mail_security_class_4 {
+  -fx-text-fill: #FF9C4C;
+}
+
+.mail_security_class_5 {
+  -fx-text-fill: #FFF08D;
+}
+
+.mail_security_class_6 {
+  -fx-text-fill: #BF9AFF;
+}
+
+.mail_attach_security_class_1 {
+  -fx-text-fill: #7CC6FF;
+}
+
+.mail_attach_security_class_2 {
+  -fx-text-fill: #FF715A;
+}
+
+.mail_attach_security_class_3 {
+  -fx-text-fill: #82FF8A;
+}
+
+.mail_attach_security_class_4 {
+  -fx-text-fill: #FF9C4C;
+}
+
+.mail_attach_security_class_5 {
+  -fx-text-fill: #FFF08D;
+}
+
+.mail_attach_security_class_6 {
+  -fx-text-fill: #BF9AFF;
+}
+
+.toolBarbutton:hover {
+  -fx-border-color: #ffa81f;
+  -fx-background-color: #ffea6f;
+  -fx-border-radius: 0, 0;
+}
+
+.toolBarbutton:pressed {
+  -fx-background-color: #ffa81f;
+}
+
+.toolBarbutton:selected {
+  -fx-background-color: #31a5ff;
+}
+
+.menu-button .label {
+  -fx-text-fill: black;
+}
+
+.menu {
+  -fx-border-width: 1;
+  -fx-border-color: transparent;
+  -fx-background-color: transparent;
+}
+
+.menu:hover {
+  -fx-border-width: 1;
+  -fx-border-color: #ffa81f;
+  -fx-background-color: #ffea6f;
+}
+
+.menu:pressed {
+  -fx-background-color: #ffa81f;
+}
+
+.menu-item {
+  -fx-border-width: 1;
+  -fx-border-color: transparent;
+  -fx-background-color: transparent;
+}
+
+.menu-item:hover {
+  -fx-border-width: 1;
+  -fx-border-color: #ffa81f;
+  -fx-background-color: #ffea6f;
+}
+
+.menu-item:pressed {
+  -fx-background-color: #ffa81f;
+}
+
+.menu .label {
+  -fx-border-color: transparent;
+  -fx-border-width: 0;
+  -fx-background-radius: 0;
+  -fx-background-color: transparent;
+  -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+  -fx-font-size: 1em; /* 12 */
+  -fx-text-fill: black;
+}
+
+.tooltip {
+  -fx-border-width: 1;
+  -fx-background-radius: 5;
+  -fx-border-radius: 5;
+  -fx-border-color: grey;
+  -fx-background-color: #e7e7e7;
+  -fx-text-fill: black;
+  -fx-font-size: 1em; /* 12 */
+}
+
+.quick-access-bar .button {
+  -fx-border-color: transparent;
+  -fx-border-width: 1;
+  -fx-background-radius: 0;
+  -fx-background-color: transparent;
+  -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+  -fx-font-size: 1em; /* 12 */
+  -fx-text-fill: transparent;
+}

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxWidth="1.7976931348623157E308" prefHeight="742.0" prefWidth="1483.0" styleClass="appBgWhiteColor" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar prefHeight="0.0" prefWidth="1157.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="%File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#handleClickedOnCloseMenuButton" text="%Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="%Edit">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#handleClickedOnDeleteMenuButton" text="%Delete" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="%View">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#actionOnShowPreviewMenuItem" text="%ShowPreview" />
+                              <MenuItem mnemonicParsing="false" onAction="#actionOnHidePreviewMenuItem" text="%HidePreview" />
+                          </items>
+                        </Menu>
+                      <Menu mnemonicParsing="false" text="%Help">
+                        <items>
+                           <MenuItem mnemonicParsing="false" onAction="#actionOnSettingsMenuItem" text="%Settings" />
+                          <MenuItem mnemonicParsing="false" text="%About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <ToolBar fx:id="actionToolBar">
+                     <items>
+                        <Button fx:id="newMailMenuButton" mnemonicParsing="false" onAction="#handleClickedOnNewMailMenuButton" styleClass="toolBarbutton" text="%tb.newMail">
+                           <tooltip>
+                              <Tooltip text="%new_mail" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="printButton" mnemonicParsing="false" onAction="#handleClickedOnPrintMenuButton" styleClass="toolBarbutton" text="%tb.print">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_print" />
+                           </tooltip></Button>
+                        <Button fx:id="deleteButton" layoutX="153.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnDeleteMenuButton" styleClass="toolBarbutton" text="%tb.delete">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_del" />
+                           </tooltip></Button>
+                        <Button fx:id="replyButton" layoutX="97.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnReplyMenuButton" styleClass="toolBarbutton" text="%tb.reply">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_reply" />
+                           </tooltip></Button>
+                        <Button fx:id="replyToAllButton" layoutX="262.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnReplyAllMenuButton" styleClass="toolBarbutton" text="%tb.replyToAll">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_reply_all" />
+                           </tooltip></Button>
+                        <Button fx:id="forwardButton" layoutX="307.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnForwardMenuButton" styleClass="toolBarbutton" text="%tb.forward">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_forward" />
+                           </tooltip></Button>
+                        <Button fx:id="followUpButton" layoutX="494.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnFollowMenuButton" styleClass="toolBarbutton" text="%Follow">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_follow" />
+                           </tooltip></Button>
+                        <Button fx:id="sendReceiveButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnSendReceiveMenuButton" styleClass="toolBarbutton" text="%tb.sendReceive">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_send_rec" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="oneNoteButton" layoutX="613.0" layoutY="10.0" mnemonicParsing="false" styleClass="toolBarbutton" text="%tb.oneNote" visible="false">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_one_note" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="addressBookButton" layoutX="613.0" layoutY="10.0" mnemonicParsing="false" styleClass="toolBarbutton" text="%tb.addressBook" visible="false">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_adb" />
+                           </tooltip>
+                        </Button>
+                        <ComboBox fx:id="addressBookComboBox" prefWidth="150.0" styleClass="searchComboxBox" visible="false">
+                           <tooltip>
+                              <Tooltip text="Find a Contact" />
+                           </tooltip>
+                        </ComboBox>
+                        <Button fx:id="helpButton" layoutX="898.0" layoutY="10.0" mnemonicParsing="false" styleClass="toolBarbutton" text="%tb.help" visible="false">
+                           <tooltip>
+                              <Tooltip text="%tool_tip_help" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="pendingApproveMailButon" layoutX="1127.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnPendingApproveMenuButton" styleClass="toolBarbutton" text="%tb.pending_approval" visible="false">
+                           <tooltip>
+                              <Tooltip text="%tb.pending_approval" />
+                           </tooltip>
+                        </Button>
+                        <Button fx:id="mailApproveMailButon" layoutX="1194.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnMailApproveMenuButton" styleClass="toolBarbutton" text="%tb.mail_approval" visible="false">
+                           <tooltip>
+                              <Tooltip text="%tb.mail_approval" />
+                           </tooltip>
+                        </Button>
+                     </items>
+                  </ToolBar>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <SplitPane fx:id="mainSplitePane" dividerPositions="0.14179608372721134, 0.7582714382174207" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <AnchorPane fx:id="leftAnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="745.0" prefWidth="248.0">
+                     <children>
+                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER" styleClass="appBgGreyColor">
+                                 <children>
+                                    <Label fx:id="categoryNameLabel" text="%Mail" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="addBoxButton" mnemonicParsing="false" onAction="#handleClickedOnAddBoxButton" styleClass="toolBarbutton">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="leftPanCollapseButton" mnemonicParsing="false" onAction="#handleClickedOnLeftPanCollapseButton" styleClass="toolBarbutton" text="&lt;&lt;" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="2.0" left="5.0" top="2.0" />
+                                 </padding>
+                              </HBox>
+                              <ListView fx:id="categoryItemListView" prefHeight="398.0" prefWidth="207.0" VBox.vgrow="ALWAYS" />
+                              <ListView fx:id="categoryListView" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane fx:id="centerAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="535.0" prefWidth="334.0" styleClass="appBgWhiteColor">
+                     <children>
+                        <HBox fx:id="categoryListHBox" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="expandAnchorPane" styleClass="appBgWhiteColor">
+                                 <children>
+                                    <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <VBox styleClass="appBgGreyColor">
+                                             <children>
+                                                <Button fx:id="leftPanExpandButton" mnemonicParsing="false" onAction="#handleClickedOnLeftPanCollapseButton" styleClass="toolBarbutton" text="&gt;&gt;">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin></Button>
+                                                <Pane VBox.vgrow="ALWAYS" />
+                                                <ToggleButton fx:id="mailCatButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnMailCatButton" prefWidth="39.0" styleClass="toolBarbutton" text="Mail" />
+                                                <ToggleButton fx:id="addressBookCatButton" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleClickedOnAdressBookCatButton" prefWidth="39.0" styleClass="toolBarbutton" text="ADB" />
+                                                <ToggleButton fx:id="toDoCatButton" layoutX="10.0" layoutY="621.0" mnemonicParsing="false" onAction="#handleClickedOnToDoCatButton" prefWidth="39.0" styleClass="toolBarbutton" text="ToDo" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="2.0" top="2.0" />
+                                             </padding>
+                                          </VBox>
+                                          <Separator orientation="VERTICAL" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox fx:id="mailContentsVBox" prefHeight="200.0" prefWidth="100.0" styleClass="appBgWhiteColor" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <VBox fx:id="searchVBox">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" styleClass="appBgGreyColor">
+                                                   <children>
+                                                      <Label fx:id="categoryNameLabel1" text="%INBOX" />
+                                                      <Button fx:id="btnSync" mnemonicParsing="false" onAction="#handleClickedOnSyncButton" styleClass="toolBarbutton" text="Sync">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <ComboBox fx:id="searchComboBox" prefWidth="150.0" styleClass="searchComboxBox" />
+                                                      <Button fx:id="exSearchButton" mnemonicParsing="false" onAction="#handleClickedOnExSearchButon" styleClass="toolBarbutton" text="ArrowUp">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin></Button>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="2.0" left="5.0" top="2.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <FlowPane fx:id="exSearchFlowPane" hgap="10.0" vgap="5.0" VBox.vgrow="ALWAYS">
+                                                   <children>
+                                                      <Label fx:id="exSearchSenderLabel" text="%Sender" />
+                                                      <TextField fx:id="senderSearchField" prefWidth="100.0" />
+                                                      <Label fx:id="exSearchReceiverLabel" text="%Receiver" />
+                                                      <TextField fx:id="receiverSearchField" layoutX="109.0" layoutY="10.0" prefWidth="100.0" />
+                                                      <Label text="%SubjectColon" />
+                                                      <TextField fx:id="subjectSearchField" layoutX="70.0" layoutY="10.0" prefWidth="100.0" />
+                                                      <Label text="%Content" />
+                                                      <TextField fx:id="contentSearchField" prefWidth="100.0" />
+                                                      <Label text="%ReadStatus" />
+                                                      <ComboBox fx:id="readStatusCombo" prefHeight="25.0" prefWidth="85.0" styleClass="attach-menu-button" visibleRowCount="3" />
+                                                      <Label text="%DateFromColon" />
+                                                      <DatePicker fx:id="fromSearchPicker" prefHeight="25.0" prefWidth="119.0" />
+                                                      <Label text="%DateToColon" />
+                                                      <DatePicker fx:id="toSearchPicker" prefHeight="25.0" prefWidth="120.0" />
+                                                      <HBox alignment="CENTER">
+                                                         <children>
+                                                            <Label text="%SecurityLevel">
+                                                               <HBox.margin>
+                                                                  <Insets right="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                            <ComboBox fx:id="securityLevelComboBox" prefHeight="25.0" prefWidth="93.0" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </FlowPane>
+                                             </children>
+                                          </VBox>
+                                          <TableView fx:id="mainTableView" onMouseClicked="#handleClickedOnTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn prefWidth="30.0">
+                                                   <graphic>
+                                                      <CheckBox fx:id="selectAllCheckBox" mnemonicParsing="false" />
+                                                   </graphic>
+                                                </TableColumn>
+                                                <TableColumn prefWidth="20.0" text="-" />
+                                                <TableColumn minWidth="2.0" prefWidth="20.0" text="\@" />
+                                              <TableColumn prefWidth="139.0" text="%Category" />
+                                              <TableColumn minWidth="0.0" prefWidth="206.0" text="%From" />
+                                                <TableColumn minWidth="0.0" prefWidth="284.0" text="%To" />
+                                                <TableColumn minWidth="0.0" prefWidth="184.0" text="%Subject" />
+                                                <TableColumn minWidth="0.0" prefWidth="49.0" text="%SentDate" />
+                                                <TableColumn minWidth="0.0" prefWidth="20.0" text="%Received" />
+                                                <TableColumn prefWidth="92.0" text="%Size" visible="false" />
+                                                <TableColumn prefWidth="139.0" text="Flag" visible="false" />
+                                                <TableColumn prefWidth="20.0" text="!" />
+                                                <TableColumn prefWidth="139.0" text="Journal" visible="false" />
+                                            </columns>
+                                          </TableView>
+                                          <WebView fx:id="approveMailWebView" prefHeight="200.0" prefWidth="200.0" visible="false" VBox.vgrow="ALWAYS" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+                <AnchorPane fx:id="rightAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="appBgWhiteColor">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox fx:id="headerMenuHBox" alignment="CENTER_LEFT">
+                                 <children>
+                                    <Button fx:id="replyInContentButton" mnemonicParsing="false" onAction="#handleClickedOnReplyMenuButton" styleClass="toolBarbutton" text="%Reply" />
+                                    <Button fx:id="replyAllInContentButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnReplyAllMenuButton" styleClass="toolBarbutton" text="%ReplyAll">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="forwardInContentButton" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClickedOnForwardMenuButton" styleClass="toolBarbutton" text="%Forward" />
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="dateLabel" text="12:34 PM" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets right="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox fx:id="approveStatVBox">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <HBox fx:id="followContainerHBox" alignment="CENTER_LEFT">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="5.0" top="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label fx:id="importantLabel1" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="importantLabel">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin></Label>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <HBox fx:id="followHBox" alignment="CENTER_LEFT" onMouseClicked="#handleClickedOnFollowButton" styleClass="clicked_pane">
+                                       <children>
+                                          <Label text="%Follow">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="favLabel" text=":" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <Label fx:id="mailSecurityClassLabel" styleClass="mail_security_class" text="Class 10">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Label>
+                                 </children>
+                              </HBox>
+                              <Label fx:id="fromLabel" text="%FromColon">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="subjectLabel" layoutX="10.0" layoutY="110.0" text="%SubjectColon">
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <FlowPane fx:id="toFollowPane">
+                                 <children>
+                                    <Label text="%ToColon">
+                                       <FlowPane.margin>
+                                          <Insets bottom="5.0" top="5.0" />
+                                       </FlowPane.margin>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </FlowPane>
+                              <FlowPane fx:id="ccFlowPane" layoutX="25.0" layoutY="114.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </FlowPane>
+                              <FlowPane fx:id="bccFlowPane">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </FlowPane>
+                              <Pane fx:id="attachTopDivPane" prefHeight="1.0" styleClass="appBgGreyColor">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="1.0" />
+                                 </padding>
+                              </Pane>
+                              <FlowPane fx:id="attachFlowPane" layoutX="25.0" layoutY="144.0">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </FlowPane>
+                              <Pane fx:id="attachDownDivPane" layoutX="25.0" layoutY="224.0" prefHeight="1.0" styleClass="appBgGreyColor">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets top="1.0" />
+                                 </padding>
+                              </Pane>
+                              <WebView fx:id="mailPrevContentWebView" prefHeight="510.0" prefWidth="1105.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </WebView>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label fx:id="statusLabel" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+         <bottom>
+            <HBox prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="selectionStatusLabel">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Pane prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="appStatusLabel">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
